@@ -3,8 +3,8 @@
 $MAX_PAGE_SIZE = 10;
 
 $user_agent = $REQUEST_HEADERS['user-agent'] ?? '';
-$is_iphone = stripos($user_agent, 'iphone') >= 0;
-$is_ipad = stripos($user_agent, 'ipad') >= 0;
+$is_iphone = stripos($user_agent, 'iphone') !== FALSE;
+$is_ipad = stripos($user_agent, 'ipad') !== FALSE;
 $db = new SQLite3('webview/announce/announce_list.db');
 $db->busyTimeout(5000);
 /*

@@ -4,8 +4,8 @@ if(!isset($_GET['announce_id']) || !is_numeric($_GET['announce_id']))
 
 $user_agent = $REQUEST_HEADERS['user-agent'] ?? '';
 $display_index = $_GET['disp_faulty'] ?? 0;
-$is_iphone = stripos($user_agent, 'iphone') >= 0;
-$is_ipad = stripos($user_agent, 'ipad') >= 0;
+$is_iphone = stripos($user_agent, 'iphone') !== FALSE;
+$is_ipad = stripos($user_agent, 'ipad') !== FALSE;
 
 if(!is_numeric($display_index))
 	$display_index = 0;

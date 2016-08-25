@@ -1,7 +1,7 @@
 <?php
 $user_agent = null_coalescing($REQUEST_HEADERS['user-agent'], '');
-$is_iphone = stripos($user_agent, 'iphone') >= 0;
-$is_ipad = stripos($user_agent, 'ipad') >= 0;
+$is_iphone = stripos($user_agent, 'iphone') !== FALSE;
+$is_ipad = stripos($user_agent, 'ipad') !== FALSE;
 $is_ios = $is_iphone || $is_ipad;
 ?>
 <!DOCTYPE html>

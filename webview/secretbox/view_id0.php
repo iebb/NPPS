@@ -1,7 +1,7 @@
 <?php
 $user_agent = $REQUEST_HEADERS['user-agent'] ?? '';
-$is_iphone = stripos($user_agent, 'iphone') >= 0;
-$is_ipad = stripos($user_agent, 'ipad') >= 0;
+$is_iphone = stripos($user_agent, 'iphone') !== FALSE;
+$is_ipad = stripos($user_agent, 'ipad') !== FALSE;
 
 $secretbox_info = $DATABASE->execute_query('SELECT name, r_list, sr_list, ur_list, sr_chance, ur_chance, sr_guarantee, sr_new, ur_new FROM `secretbox_list` WHERE id = 0')[0];
 $r_chance = 100.0 - $secretbox_info[4] - $secretbox_info[5];

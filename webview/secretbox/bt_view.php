@@ -1,7 +1,7 @@
 <?php
 $user_agent = $REQUEST_HEADERS['user-agent'] ?? '';
-$is_iphone = stripos($user_agent, 'iphone') >= 0;
-$is_ipad = stripos($user_agent, 'ipad') >= 0;
+$is_iphone = stripos($user_agent, 'iphone') !== FALSE;
+$is_ipad = stripos($user_agent, 'ipad') !== FALSE;
 $sid = intval($_GET['coupon_secretbox_id'] ?? 0);
 
 if($sid <= 0)
